@@ -5,9 +5,7 @@ UI for a database that tracks the Items in a craft store's inventory. The databa
 Link to view the live website: https://web.engr.oregonstate.edu/~woodforc/intro2databases/items.html 
   (During edits this may not be viewable)
 
-If you receive a forbidden access error, run these in your terminal:
-
-
+If you receive a forbidden access error, run these in your terminal (individual commands separated by arrows):
   ---> find ~/public_html/intro2databases -type d -exec chmod a+rx {} + 
   ---> find ~/public_html/intro2databases -type f -exec chmod a+rx {} +
   ---> chmod a+rx ~/public_html/intro2databases/items.html
