@@ -6,10 +6,12 @@ Link to view the live website: https://web.engr.oregonstate.edu/~woodforc/intro2
   (During edits this may not be viewable)
 
 If you receive a forbidden access error, run these in your terminal:
-  find ~/public_html/intro2databases -type d -exec chmod a+rx {} + 
-  find ~/public_html/intro2databases -type f -exec chmod a+rx {} +
-  chmod a+rx ~/public_html/intro2databases/items.html
-  chmod a+rx ~/public_html/intro2databases/customers.html
+
+
+  ---> find ~/public_html/intro2databases -type d -exec chmod a+rx {} + 
+  ---> find ~/public_html/intro2databases -type f -exec chmod a+rx {} +
+  ---> chmod a+rx ~/public_html/intro2databases/items.html
+  ---> chmod a+rx ~/public_html/intro2databases/customers.html
 
 
 Database schema:
