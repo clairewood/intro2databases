@@ -1,2 +1,2 @@
 # intro2databases
-In-progress project for my Intro to Databases class. 
+In-progress project for Intro to Databases class. 
