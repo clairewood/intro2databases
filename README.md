@@ -15,3 +15,4 @@ If you receive a forbidden access error, run these in your terminal:
 Database schema:
 
 ![image](https://user-images.githubusercontent.com/102620776/218896795-dab102ce-df51-41b9-8986-729c9c65736f.png)
+ 
