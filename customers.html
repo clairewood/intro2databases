@@ -1,0 +1,146 @@
+<!-- The code below was adapted from people.html file
+    taken from professor's example file bsg_HTML_UI -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <script>
+        function showform(dowhat) {
+			/*
+			* four DIVS: browse, insert, update, delete
+			* this function sets one visible the others not
+			*/
+			if (dowhat == 'insert'){
+				document.getElementById('browse').style.display = 'none';
+				document.getElementById('insert').style.display = 'block';
+				document.getElementById('update').style.display = 'none';
+				document.getElementById('delete').style.display = 'none';
+			}
+			else if (dowhat == 'update'){
+				document.getElementById('browse').style.display = 'none';
+				document.getElementById('insert').style.display = 'none';
+				document.getElementById('update').style.display = 'block';
+				document.getElementById('delete').style.display = 'none';
+			}
+			else if (dowhat == 'delete'){
+				document.getElementById('browse').style.display = 'none';
+				document.getElementById('insert').style.display = 'none';
+				document.getElementById('update').style.display = 'none';
+				document.getElementById('delete').style.display = 'block';
+			}
+      else if (dowhat == 'all'){
+				document.getElementById('browse').style.display = 'block';
+				document.getElementById('insert').style.display = 'block';
+				document.getElementById('update').style.display = 'block';
+				document.getElementById('delete').style.display = 'block';
+			}
+			else { //by default display browse
+				document.getElementById('browse').style.display = 'block';
+				document.getElementById('insert').style.display = 'none';
+				document.getElementById('update').style.display = 'none';
+				document.getElementById('delete').style.display = 'none';
+			}
+		}
+    function newCustomer() { showform('insert'); }
+    function updateCustomer(cid) { showform('update'); }
+    function deleteCustomer(cid) { showform ('delete'); }
+    function browseCustomers() { showform ('browse'); }
+    function showAll() { showform ('all'); }
+    </script>
+</head>
+
+<!-- to stop getting "forbidden access" error message, 
+    run this in terminal: chmod a+rx ~/public_html/intro2databases/filename.html
+    (but replace filename with actual name)
+-->
+
+<body>
+    <h1> Morse Coders Craft Store </h1>
+    <h2> Customers </h2>
+    <a href="items.html">Items</a> | <a href="customers.html">Customers</a>
+    <!-- TODO: add all tables here-->
+    <div id="browse" style="display: block">
+    <p><strong>Browse Customers</strong></p>
+        <table class="center">
+            <tr>
+                <th><a href="#" onClick="newCustomer()">New</a></th>
+                <th></th>
+                <th>ID</th>
+                <th>first name</th>
+                <th>last name</th>
+                <th>phone</th>
+                <th>email</th>
+            </tr>
+            <tr>
+                <td><a href="#" onClick="updateCustomer('this.customerID')">Edit</a></td>
+                <td><a href="#" onClick="deleteCustomer('this.customerID')">Delete</a></td>
+                <td>1</td>
+                <td>Joel</td>
+                <td>Miller</td>
+                <td>5555555555</td>
+                <td>joel.miller@hello.com</td>
+
+            </tr>
+            <tr> <!--pound sign just stops from navigating anywhere-->
+                <td><a href="#">Edit</a></td>
+                <td><a href="#">Delete</a></td>
+                <td>2</td>
+                <td>Tommy</td>
+                <td>Miller</td>
+                <td>1234567890</td>
+                <td>tom.miller@hello.com</td>
+            </tr>
+        </table>
+        <p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert">
+    <form method="POST" id="addCustomer">
+        <legend><strong>Add Customer</strong></legend>
+          <fieldset class="fields">
+            <label> first name </label> <input type="text" name="fname">
+            <label> last name </label> <input type="text" name="lname">
+            <label> phone </label> <input type="text" name="phone">
+            <label> email </label> <input type="text" name="email">
+      </fieldset>
+          <input class="btn" type="submit" id="addCustomer" value="Add Person">
+          <input class="btn" type="button" value="cancel" onClick="browsePeople()">
+	</form> 
+</div><!-- insert -->
+<p>&nbsp;</p>
+<div id="update">
+    <form method="POST" id="updateCustomer">
+        <legend><strong>Update Customer</strong></legend>
+          <fieldset class="fields">
+          <input type="hidden" name="customerID" id="updatecustomerID" value="1">
+            <label> ID: </label> 1
+            <label> first name </label> <input type="text" name="fname">
+            <label> last name </label> <input type="text" name="lname">
+            <label> phone </label> <input type="text" name="phone">
+            <label> email </label> <input type="text" name="email">
+      </fieldset>
+          <input class="btn" type="submit" id="UpdateSaveCustomer" value="Save Update Customer">
+          <input class="btn" type="button" value="cancel" onClick="browseCustomers()">
+	</form> 
+</div><!-- update -->
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+  <form method="POST" id="deleteCustomer">
+      <legend><strong>Delete Customer</strong></legend>
+          <fieldset class="fields">
+          <p>Are you sure you wish to delete the following?</p>
+          <input type="hidden" name="customerID" id="deletepersonID" value="1">
+          <label><strong>ID:</strong></label> 1
+            <label> <strong>Name</strong> </label> Joel Miller
+            
+    </fieldset>
+    <input class="btn" type="submit" id="deleteCustomer" value="Delete Customer">
+          <input class="btn" type="button" value="Cancel" onClick="browsePeople()">
+  </form> 
+</div><!-- delete -->
+
+    </div>
+</body>
+</html>

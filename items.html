@@ -1,0 +1,110 @@
+<!-- The code below was adapted from Items.html file
+    taken from professor's example file bsg_HTML_UI -->
+
+<!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <title>Items</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+        <!-- TODO: add CRUD functions-->
+    <body>
+        <h1> Morse Coders Craft Store </h1>
+        <h2> Items </h2>
+        <a href="items.html">Items</a> | <a href="customers.html">Customers</a>
+        <!-- TODO: add all tables here-->
+        <div id="browse" style="display: block">
+        <p><strong>Browse Items</strong></p>
+            <table class="center">
+                <tr>
+                    <th><a href="#">New</a></th>
+                    <th></th>
+                    <th>id</th>
+                    <th>supplier id</th>
+                    <th>material</th>
+                    <th>color</th>
+                    <th>in_stock</th>
+                    <th>quantity</th>
+                    <th>price</th>
+                </tr>
+                <tr>
+                    <td><a href="#">Edit</a></td>
+                    <td><a href="#">Delete</a></td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td>Yarn</td>
+                    <td>Blue</td>
+                    <td>YES</td>
+                    <td>10</td>
+                    <td>10.99</td>
+                </tr>
+                <tr>
+                    <td><a href="#">Edit</a></td>
+                    <td><a href="#">Delete</a></td>
+                    <td>2</td>
+                    <td>1</td>
+                    <td>Glass</td>
+                    <td>Red</td>
+                    <td>NO</td>
+                    <td>0</td>
+                    <td>12.99</td>
+                </tr>
+            </table>
+        <p>&nbsp;</p>
+        </div> <!-- browse -->
+        <div id="insert" style="display: block">
+            <form id="addItem">
+                <legend><strong>Add Item</strong></legend>
+                  <fieldset class="fields">
+                    <label> Supplier ID </label> <input type="text" name="supplier"> <!-- should be dropdown menu eventually -->
+                    <label> Material </label> <input type="text" name="material"> <!-- should be dropdown menu eventually -->
+                    <label> Color </label> <input type="text" name="color"> <!-- should be dropdown menu eventually -->
+                    <label> In stock? </label> <input type="text" name="in_stock"> 
+                    <label> Current quantity </label> <input type="text" name="quantity">
+                    <label> Price </label> <input type="text" name="price">
+                  </fieldset>
+                  <input class="btn" type="submit" id="addItem" value="Add a Item">
+                  <input class="btn" type="button" value="cancel">
+            </form> <!--add new Item-->
+        </div><!-- insert -->
+        
+        <p>&nbsp;</p>
+        <div id="update" style="display: block">
+          <form id="updateItem">
+              <legend><strong>Update Item</strong></legend>
+                  <fieldset class="fields">
+                  <label>ID:</label> 1
+                    <label> Supplier ID </label> <input type="text" name="supplier"> <!-- should be dropdown menu eventually -->
+                    <label> Material </label> <input type="text" name="material"> <!-- should be dropdown menu eventually -->
+                    <label> Color </label> <input type="text" name="color"> <!-- should be dropdown menu eventually -->
+                    <label> In stock? </label> <input type="text" name="in_stock"> 
+                    <label> Current quantity </label> <input type="text" name="quantity">
+                    <label> Price </label> <input type="text" name="price">
+            </fieldset>
+            <input class="btn" type="submit" id="UpdateSaveItem" value="Save Update Item">
+                  <input class="btn" type="button" value="cancel" >
+          </form> 
+        </div><!-- update -->
+        <p>&nbsp;</p>
+        <div id="delete" style="display: block">
+          <form id="deleteItem">
+              <legend><strong>Delete Item</strong></legend>
+                  <fieldset class="fields">
+                  <p>Are you sure you wish to delete the following?</p>
+                    <label>ID:</label> 1
+                    <br>
+                    <label> Material: </label> Yarn
+                    <br>
+                    <label> Color: </label> Blue
+                    
+            </fieldset>
+            <input class="btn" type="submit" id="DeleteItem" value="Delete Item">
+                  <input class="btn" type="button" value="cancel" >
+          </form> 
+        </div><!-- delete -->
+    </body>
+</html>
+        
