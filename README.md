@@ -3,7 +3,14 @@ In progress project for Intro to Databases class.
 UI for a database that tracks the Items in a craft store's inventory. The database will track the Color and Material of each item, as well as the Sales, Customers, Employees, and Suppliers associated with each item. 
 
 Link to view the live website: https://web.engr.oregonstate.edu/~woodforc/intro2databases/items.html 
-(During edits this may not be viewable)
+  (During edits this may not be viewable)
+
+If you receive a forbidden access error, run these in your terminal:
+  find ~/public_html/intro2databases -type d -exec chmod a+rx {} + 
+  find ~/public_html/intro2databases -type f -exec chmod a+rx {} +
+  chmod a+rx ~/public_html/intro2databases/items.html
+  chmod a+rx ~/public_html/intro2databases/customers.html
+
 
 Database schema:
 
