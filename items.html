@@ -107,12 +107,29 @@
             <form method="POST" id="addItem">
                 <legend><strong>Add Item</strong></legend>
                   <fieldset class="fields">
-                    <label> Supplier ID: </label> <input type="text" name="supplier"> <!-- should be dropdown menu eventually -->
-                    <label> Material: </label> <input type="text" name="material"> <!-- should be dropdown menu eventually -->
-                    <label> Color: </label> <input type="text" name="color"> <!-- should be dropdown menu eventually -->
-                    <label> In stock? </label> <input type="text" name="in_stock"> 
-                    <label> Current quantity: </label> <input type="text" name="quantity">
-                    <label> Price: </label> <input type="text" name="price">
+                    <label>ID:</label> 1 
+                    <br>
+                    <label> Supplier ID: </label> <select name="supplier id">
+                        <option value="0">&nbsp;</option>
+                        <option value="1">FakeCompany (1)</option>
+                        </select>
+                    <label> Material ID: </label> <select name="supplier id">
+                        <option value="">&nbsp;</option>
+                        <option value="glass">Glass</option>
+                        <option value="yarn">Yarn</option>
+                        </select>
+                    <label> Color ID: </label> <select name="supplier id">
+                        <option value="">&nbsp;</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        </select>
+                    <label> In stock? </label> <select name="supplier id">
+                        <option value="">&nbsp;</option>
+                        <option value="yes">YES</option>
+                        <option value="no">NO</option>
+                        </select>
+                        <label> Current quantity: </label> <input type="text" name="quantity">
+                        <label> Price: </label> <input type="text" name="price">
                   </fieldset>
                   <input class="btn" type="submit" id="addItem" value="Add">
                   <input class="btn" type="button" value="Cancel">
@@ -126,9 +143,25 @@
                   <fieldset class="fields">
                   <label>ID:</label> 1 
                   <br>
-                    <label> Material: </label> <input type="text" name="material"> <!-- should be dropdown menu eventually -->
-                    <label> Color: </label> <input type="text" name="color"> <!-- should be dropdown menu eventually -->
-                    <label> In stock? </label> <input type="text" name="in_stock"> 
+                  <label> Supplier ID: </label> <select name="supplier id">
+                    <option value="0">&nbsp;</option>
+                    <option value="1">FakeCompany (1)</option>
+                    </select>
+                <label> Material ID: </label> <select name="supplier id">
+                    <option value="">&nbsp;</option>
+                    <option value="glass">Glass</option>
+                    <option value="yarn">Yarn</option>
+                    </select>
+                <label> Color ID: </label> <select name="supplier id">
+                    <option value="">&nbsp;</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    </select>
+                <label> In stock? </label> <select name="supplier id">
+                    <option value="">&nbsp;</option>
+                    <option value="yes">YES</option>
+                    <option value="no">NO</option>
+                    </select>
                     <label> Current quantity: </label> <input type="text" name="quantity">
                     <label> Price: </label> <input type="text" name="price">
             </fieldset>
@@ -142,11 +175,8 @@
               <legend><strong>Delete Item</strong></legend>
                   <fieldset class="fields">
                   <p>Are you sure you wish to delete the following?</p>
-                    <label>ID:</label> 1
-                    <br>
-                    <label> Material: </label> Yarn
-                    <br>
-                    <label> Color: </label> Blue
+                    <label>ID:</label> 1 | <label> Material: </label> Yarn | 
+                    <label> Color: </label> Blue | <label> Supplier ID: </label> 1
                     
             </fieldset>
             <input class="btn" type="submit" id="DeleteItem" value="Delete Item">

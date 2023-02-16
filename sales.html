@@ -91,9 +91,17 @@
                 <legend><strong>Add Sale</strong></legend>
                   <fieldset class="fields">
                     <label> Sale Date: </label> <input type="text" name="supplier"> <!-- should be dropdown menu eventually -->
-                    <label> Customer ID: </label> <input type="text" name="material"> <!-- should be dropdown menu eventually -->
-                    <label> Employee ID: </label> <input type="text" name="color"> <!-- should be dropdown menu eventually -->
-                  </fieldset>
+                    <label> Customer ID: </label> <select name="supplier id">
+                        <option value="">&nbsp;</option>
+                        <option value="1">Joel Miller (1)</option>
+                        <option value="2">Tommy Miller (2)</option>
+                        </select>
+                    <label> Employee ID: </label> <select name="supplier id">
+                        <option value="">&nbsp;</option>
+                        <option value="1">Ellie Williams (1)</option>
+                        <option value="2">Abby Anderson (2) </option>
+                        </select>
+                    </fieldset>
                   <input class="btn" type="submit" id="addSale" value="Add">
                   <input class="btn" type="button" value="Cancel">
             </form> <!--add new Sale-->
@@ -103,12 +111,18 @@
           <form method="POST" id="updateSale">
               <legend><strong>Update Sale</strong></legend>
                   <fieldset class="fields">
-                  <label>ID:</label> 1 
-                  <br>
-                  <label> Sale Date: </label> <input type="text" name="supplier"> <!-- should be dropdown menu eventually -->
-                  <label> Customer ID: </label> <input type="text" name="material"> <!-- should be dropdown menu eventually -->
-                  <label> Employee ID: </label> <input type="text" name="color"> <!-- should be dropdown menu eventually -->
-                </fieldset>
+                    <label> Sale Date: </label> <input type="text" name="supplier"> <!-- should be dropdown menu eventually -->
+                    <label> Customer ID: </label> <select name="supplier id">
+                        <option value="">&nbsp;</option>
+                        <option value="1">Joel Miller (1)</option>
+                        <option value="2">Tommy Miller (2)</option>
+                        </select>
+                    <label> Employee ID: </label> <select name="supplier id">
+                        <option value="">&nbsp;</option>
+                        <option value="1">Ellie Williams (1)</option>
+                        <option value="2">Abby Anderson (2) </option>
+                        </select>
+                    </fieldset>
             <input class="btn" type="submit" id="UpdateSaveSale" value="Save Updated Sale">
                   <input class="btn" type="button" value="Cancel" >
           </form> 
