@@ -60,7 +60,11 @@
 <body>
     <h1> Morse Coders Craft Store </h1>
     <h2> Customers </h2>
-    <a href="items.html">Items</a> | <a href="customers.html">Customers</a>
+    <a href="items.html">Items</a> | <a href="customers.html">Customers</a> |
+    <a href="sales.html">Sales</a> | <a href="itemssold.html">Items Sold</a>
+    <br>
+    <a href="materials.html">Materials</a> | <a href="colors.html">Colors</a> |
+    <a href="suppliers.html">Suppliers</a> | <a href="employees.html">Employees</a>
     <!-- TODO: add all tables here-->
     <div id="browse" style="display: block">
     <p><strong>Browse Customers</strong></p>
@@ -115,7 +119,7 @@
         <legend><strong>Update Customer</strong></legend>
           <fieldset class="fields">
           <input type="hidden" name="customerID" id="updatecustomerID" value="1">
-            <label> ID: </label> 1
+            <label> ID: </label> 1 <br>
             <label> first name </label> <input type="text" name="fname">
             <label> last name </label> <input type="text" name="lname">
             <label> phone </label> <input type="text" name="phone">
@@ -133,7 +137,7 @@
           <p>Are you sure you wish to delete the following?</p>
           <input type="hidden" name="customerID" id="deletepersonID" value="1">
           <label><strong>ID:</strong></label> 1
-            <label> <strong>Name</strong> </label> Joel Miller
+            <label> <strong>Name:</strong> </label> Joel Miller
             
     </fieldset>
     <input class="btn" type="submit" id="deleteCustomer" value="Delete Customer">

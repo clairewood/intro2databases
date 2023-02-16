@@ -8,8 +8,10 @@ Link to view the live website: https://web.engr.oregonstate.edu/~woodforc/intro2
 If you receive a forbidden access error, run these in your terminal (individual commands separated by arrows):
   ---> find ~/public_html/intro2databases -type d -exec chmod a+rx {} + 
   ---> find ~/public_html/intro2databases -type f -exec chmod a+rx {} +
-  ---> chmod a+rx ~/public_html/intro2databases/items.html
-  ---> chmod a+rx ~/public_html/intro2databases/customers.html
+
+  If it still doens't work, try:
+  ---> chmod a+rx ~/public_html/intro2databases/filename.html
+  (replace filename.html with real filename)
 
 
 Database schema:
