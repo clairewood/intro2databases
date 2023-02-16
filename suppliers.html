@@ -1,16 +1,44 @@
-<!--TODO add notes/citations here-->
+<!-- The code below was adapted from people.html and planets.html files
+    taken from professor's example file bsg_HTML_UI -->
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
     
     <head>
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
-        <title>Items</title>
         <link href="style.css" rel="stylesheet" type="text/css" />
+        <script>
+            function showform(dowhat) {
+                /*
+                * Suppliers table will not have update/delete functionality 
+                */
+                if (dowhat == 'insert'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'block';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+          else if (dowhat == 'all'){
+                    document.getElementById('browse').style.display = 'block';
+                    document.getElementById('insert').style.display = 'block';
+                    document.getElementById('update').style.display = 'block';
+                    document.getElementById('delete').style.display = 'block';
+                }
+                else { //by default display browse
+                    document.getElementById('browse').style.display = 'block';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+            }
+        function newSupplier() { showform('insert'); }
+        function browseSuppliers() { showform ('browse'); }
+        function showAll() { showform ('all'); }
+        </script>
     </head>
-        <!-- TODO: add CRUD functions-->
-    <body>
+    
+    <body onload="browseSuppliers()"></body>
         <h1> Morse Coders Craft Store </h1>
         <h2> Suppliers </h2>
         <a href="items.html">Items</a> | <a href="customers.html">Customers</a> |
@@ -18,4 +46,36 @@
         <br>
         <a href="materials.html">Materials</a> | <a href="colors.html">Colors</a> |
         <a href="suppliers.html">Suppliers</a> | <a href="employees.html">Employees</a>
-        <!-- TODO: add all tables here-->
+        <br>
+        <!-- Tables -->
+        <div id="browse" style="display: block">
+        <p><a href="#" onClick="showAll()">Display all forms</a> </p>
+        <p><strong>Browse Suppliers</strong></p>
+            <table class="center">
+                <tr>
+                    <th><a href="#" onClick="newSupplier()">New</a></th>
+                    <th></th>
+                    <th>ID</th>
+                    <th>Name</th>
+                </tr>
+                <tr>
+                    <td><a href="#" onClick="updateSupplier('this.SupplierID')">Edit</a></td>
+                    <td><a href="#" onClick="deleteSupplier('this.SupplierID')">Delete</a></td>
+                    <td>1</td>
+                    <td>FakeCompany</td>
+                </tr>
+            </table>
+            <p>&nbsp;</p>
+    </div> <!-- browse -->
+    <div id="insert">
+        <form method="POST" id="addSupplier">
+            <legend><strong>Add Supplier</strong></legend>
+              <fieldset class="fields">
+                <label> Supplier Name: </label> <input type="text" name="supplier">
+          </fieldset>
+              <input class="btn" type="submit" id="addSupplier" value="Add">
+              <input class="btn" type="button" value="Cancel" onClick="browseSuppliers()">
+        </form> 
+    </div><!-- insert -->
+    </body>
+    </html>

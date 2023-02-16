@@ -1,16 +1,44 @@
-<!--TODO add notes/citations here-->
+<!-- The code below was adapted from people.html and planets.html files
+    taken from professor's example file bsg_HTML_UI -->
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
     
     <head>
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
-        <title>Items</title>
         <link href="style.css" rel="stylesheet" type="text/css" />
+        <script>
+            function showform(dowhat) {
+                /*
+                * ItemsSold table will not have update/delete functionality
+                */
+                if (dowhat == 'insert'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'block';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+                else if (dowhat == 'all'){
+                    document.getElementById('browse').style.display = 'block';
+                    document.getElementById('insert').style.display = 'block';
+                    document.getElementById('update').style.display = 'block';
+                    document.getElementById('delete').style.display = 'block';
+                }
+                else { //by default display browse
+                    document.getElementById('browse').style.display = 'block';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+            }
+        function newItemSold() { showform('insert'); }
+        function browseItemsSold() { showform ('browse'); }
+        function showAll() { showform ('all'); }
+        </script>
     </head>
-        <!-- TODO: add CRUD functions-->
-    <body>
+    
+    <body onload="browseItemsSold()"></body>
         <h1> Morse Coders Craft Store </h1>
         <h2> Items Sold </h2>
         <a href="items.html">Items</a> | <a href="customers.html">Customers</a> |
@@ -18,4 +46,42 @@
         <br>
         <a href="materials.html">Materials</a> | <a href="colors.html">Colors</a> |
         <a href="suppliers.html">Suppliers</a> | <a href="employees.html">Employees</a>
-        <!-- TODO: add all tables here-->
+        <br>
+        <!-- Tables -->
+        <div id="browse" style="display: block">
+        <p><a href="#" onClick="showAll()">Display all forms</a> </p>
+        <p><strong>Browse ItemsSold</strong></p>
+            <table class="center">
+                <table class="center">
+                    <tr>
+                        <th><a href="#" onClick="newItem()">New</a></th>
+                        <th></th>
+                        <th>item_id</th>
+                        <th>supplier id</th>
+                        <th>quantity</th>
+                    </tr>
+                    <tr>
+                        <td><a href="#" onClick="updateItem('this.itemID')">Edit</a></td>
+                        <td><a href="#" onClick="deleteItem('this.itemID')">Delete</a></td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>10</td>
+                    </tr>
+                </table>
+            </table>
+            <p>&nbsp;</p>
+    </div> <!-- browse -->
+    <div id="insert">
+        <form method="POST" id="addItemSold">
+            <legend><strong>Add Item Sold</strong></legend>
+              <fieldset class="fields">
+                <label> Item ID: </label> <input type="text" name="fname">
+                <label> Sale ID: </label> <input type="text" name="lname">
+                <label> Quantity: </label> <input type="text" name="phone">
+          </fieldset>
+              <input class="btn" type="submit" id="addItemSold" value="Add">
+              <input class="btn" type="button" value="Cancel" onClick="browseItemsSold()">
+        </form> 
+    </div><!-- insert -->
+    </body>
+    </html>

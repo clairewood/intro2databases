@@ -1,16 +1,44 @@
-<!--TODO add notes/citations here-->
+<!-- The code below was adapted from people.html and planets.html files
+    taken from professor's example file bsg_HTML_UI -->
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
     
     <head>
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
-        <title>Items</title>
         <link href="style.css" rel="stylesheet" type="text/css" />
+        <script>
+            function showform(dowhat) {
+                /*
+                * Employees table will not have update/delete functionality
+                */
+                if (dowhat == 'insert'){
+                    document.getElementById('browse').style.display = 'none';
+                    document.getElementById('insert').style.display = 'block';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+                else if (dowhat == 'all'){
+                    document.getElementById('browse').style.display = 'block';
+                    document.getElementById('insert').style.display = 'block';
+                    document.getElementById('update').style.display = 'block';
+                    document.getElementById('delete').style.display = 'block';
+                }
+                else { //by default display browse
+                    document.getElementById('browse').style.display = 'block';
+                    document.getElementById('insert').style.display = 'none';
+                    document.getElementById('update').style.display = 'none';
+                    document.getElementById('delete').style.display = 'none';
+                }
+            }
+        function newEmployee() { showform('insert'); }
+        function browseEmployees() { showform ('browse'); }
+        function showAll() { showform ('all'); }
+        </script>
     </head>
-        <!-- TODO: add CRUD functions-->
-    <body>
+    
+    <body onload="browseEmployees()"></body>
         <h1> Morse Coders Craft Store </h1>
         <h2> Employees </h2>
         <a href="items.html">Items</a> | <a href="customers.html">Customers</a> |
@@ -18,4 +46,51 @@
         <br>
         <a href="materials.html">Materials</a> | <a href="colors.html">Colors</a> |
         <a href="suppliers.html">Suppliers</a> | <a href="employees.html">Employees</a>
-        <!-- TODO: add all tables here-->
+        <br>
+        <!-- Tables -->
+        <div id="browse" style="display: block">
+        <p><a href="#" onClick="showAll()">Display all forms</a> </p>
+        <p><strong>Browse Employees</strong></p>
+            <table class="center">
+                <tr>
+                    <th><a href="#" onClick="newEmployee()">New</a></th>
+                    <th></th>
+                    <th>ID</th>
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>phone</th>
+                </tr>
+                <tr>
+                    <td><a href="#" onClick="updateEmployee('this.EmployeeID')">Edit</a></td>
+                    <td><a href="#" onClick="deleteEmployee('this.EmployeeID')">Delete</a></td>
+                    <td>1</td>
+                    <td>Ellie</td>
+                    <td>Williams</td>
+                    <td>5555555555</td>
+    
+                </tr>
+                <tr> 
+                    <td><a href="#">Edit</a></td>
+                    <td><a href="#">Delete</a></td>
+                    <td>2</td>
+                    <td>Abby</td>
+                    <td>Anderson</td>
+                    <td>1234567890</td>
+                </tr>
+            </table>
+            <p>&nbsp;</p>
+    </div> <!-- browse -->
+    <div id="insert">
+        <form method="POST" id="addEmployee">
+            <legend><strong>Add Employee</strong></legend>
+              <fieldset class="fields">
+                <label> First name: </label> <input type="text" name="fname">
+                <label> Last name: </label> <input type="text" name="lname">
+                <label> Phone: </label> <input type="text" name="phone">
+          </fieldset>
+              <input class="btn" type="submit" id="addEmployee" value="Add">
+              <input class="btn" type="button" value="Cancel" onClick="browseEmployees()">
+        </form> 
+    </div><!-- insert -->
+    </body>
+    </html>

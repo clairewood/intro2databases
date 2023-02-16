@@ -1,7 +1,5 @@
-<!-- The code below was adapted from people.html file
+<!-- The code below was adapted from people.html and planets.html files
     taken from professor's example file bsg_HTML_UI -->
-
-    <!-- REMOVE UPDATE / DELETE -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,26 +11,13 @@
     <script>
         function showform(dowhat) {
 			/*
-			* four DIVS: browse, insert, update, delete
-			* this function sets one visible the others not
+			* Customers table will not have update/delete functionality 
 			*/
 			if (dowhat == 'insert'){
 				document.getElementById('browse').style.display = 'none';
 				document.getElementById('insert').style.display = 'block';
 				document.getElementById('update').style.display = 'none';
 				document.getElementById('delete').style.display = 'none';
-			}
-			else if (dowhat == 'update'){
-				document.getElementById('browse').style.display = 'none';
-				document.getElementById('insert').style.display = 'none';
-				document.getElementById('update').style.display = 'block';
-				document.getElementById('delete').style.display = 'none';
-			}
-			else if (dowhat == 'delete'){
-				document.getElementById('browse').style.display = 'none';
-				document.getElementById('insert').style.display = 'none';
-				document.getElementById('update').style.display = 'none';
-				document.getElementById('delete').style.display = 'block';
 			}
       else if (dowhat == 'all'){
 				document.getElementById('browse').style.display = 'block';
@@ -48,8 +33,6 @@
 			}
 		}
     function newCustomer() { showform('insert'); }
-    function updateCustomer(cid) { showform('update'); }
-    function deleteCustomer(cid) { showform ('delete'); }
     function browseCustomers() { showform ('browse'); }
     function showAll() { showform ('all'); }
     </script>
@@ -71,7 +54,6 @@
         <table class="center">
             <tr>
                 <th><a href="#" onClick="newCustomer()">New</a></th>
-                <th></th>
                 <th>ID</th>
                 <th>first name</th>
                 <th>last name</th>
@@ -79,8 +61,7 @@
                 <th>email</th>
             </tr>
             <tr>
-                <td><a href="#" onClick="updateCustomer('this.customerID')">Edit</a></td>
-                <td><a href="#" onClick="deleteCustomer('this.customerID')">Delete</a></td>
+                <td></td>
                 <td>1</td>
                 <td>Joel</td>
                 <td>Miller</td>
@@ -89,8 +70,7 @@
 
             </tr>
             <tr> 
-                <td><a href="#">Edit</a></td>
-                <td><a href="#">Delete</a></td>
+                <td></td>
                 <td>2</td>
                 <td>Tommy</td>
                 <td>Miller</td>
@@ -109,42 +89,9 @@
             <label> Phone: </label> <input type="text" name="phone">
             <label> Email: </label> <input type="text" name="email">
       </fieldset>
-          <input class="btn" type="submit" id="addCustomer" value="Add Customer">
-          <input class="btn" type="button" value="Cancel" onClick="browsePeople()">
-	</form> 
-</div><!-- insert -->
-<p>&nbsp;</p>
-<div id="update">
-    <form method="POST" id="updateCustomer">
-        <legend><strong>Update Customer</strong></legend>
-          <fieldset class="fields">
-          <input type="hidden" name="customerID" id="updatecustomerID" value="1">
-            <label> ID: </label> 1 <br>
-            <label> First name: </label> <input type="text" name="fname">
-            <label> Last name: </label> <input type="text" name="lname">
-            <label> Phone: </label> <input type="text" name="phone">
-            <label> Email: </label> <input type="text" name="email">
-      </fieldset>
-          <input class="btn" type="submit" id="UpdateSaveCustomer" value="Save Updated Customer">
+          <input class="btn" type="submit" id="addCustomer" value="Add">
           <input class="btn" type="button" value="Cancel" onClick="browseCustomers()">
 	</form> 
-</div><!-- update -->
-<p>&nbsp;</p>
-<div id="delete" style="display: block">
-  <form method="POST" id="deleteCustomer">
-      <legend><strong>Delete Customer</strong></legend>
-          <fieldset class="fields">
-          <p>Are you sure you wish to delete the following?</p>
-          <input type="hidden" name="customerID" id="deletecustomerID" value="1">
-          <label><strong>ID:</strong></label> 1 <br>
-          <label> <strong>Name:</strong> </label> Joel Miller
-            
-    </fieldset>
-    <input class="btn" type="submit" id="deleteCustomer" value="Delete Customer">
-          <input class="btn" type="button" value="Cancel" onClick="browsePeople()">
-  </form> 
-</div><!-- delete -->
-
-    </div>
+</div><!-- insert -->
 </body>
 </html>
