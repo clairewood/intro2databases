@@ -100,6 +100,17 @@
                     <td>0</td>
                     <td>12.99</td>
                 </tr>
+                <tr>
+                    <td><a href="#" onClick="updateItem('this.itemID')">Edit</a></td>
+                    <td><a href="#" onClick="deleteItem('this.itemID')">Delete</a></td>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>Yarn</td>
+                    <td>Green</td>
+                    <td>NO</td>
+                    <td>0</td>
+                    <td>7.99</td>
+                </tr>
             </table>
         <p>&nbsp;</p>
         </div> <!-- browse -->
@@ -122,6 +133,7 @@
                         <option value="">&nbsp;</option>
                         <option value="red">Red</option>
                         <option value="blue">Blue</option>
+                        <option value="green">Green</option>
                         </select>
                     <label> In stock? </label> <select name="supplier id">
                         <option value="">&nbsp;</option>
@@ -177,7 +189,6 @@
                   <p>Are you sure you wish to delete the following?</p>
                     <label>ID:</label> 1 | <label> Material: </label> Yarn | 
                     <label> Color: </label> Blue | <label> Supplier ID: </label> 1
-                    
             </fieldset>
             <input class="btn" type="submit" id="DeleteItem" value="Delete Item">
                   <input class="btn" type="button" value="Cancel" >

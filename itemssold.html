@@ -67,6 +67,20 @@
                         <td>1</td>
                         <td>10</td>
                     </tr>
+                    <tr>
+                        <td><a href="#" onClick="updateItem('this.itemID')">Edit</a></td>
+                        <td><a href="#" onClick="deleteItem('this.itemID')">Delete</a></td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" onClick="updateItem('this.itemID')">Edit</a></td>
+                        <td><a href="#" onClick="deleteItem('this.itemID')">Delete</a></td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>5</td>
+                    </tr>
                 </table>
             </table>
             <p>&nbsp;</p>
@@ -75,8 +89,18 @@
         <form method="POST" id="addItemSold">
             <legend><strong>Add Item Sold</strong></legend>
               <fieldset class="fields">
-                <label> Item ID: </label> <input type="text" name="fname">
-                <label> Sale ID: </label> <input type="text" name="lname">
+                <label> Item ID: </label> <select name="item id">
+                    <option value="0">&nbsp;</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    </select>
+                <label> Sale ID: </label> <select name="sale id">
+                    <option value="0">&nbsp;</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    </select>                
                 <label> Quantity: </label> <input type="text" name="phone">
           </fieldset>
               <input class="btn" type="submit" id="addItemSold" value="Add">
