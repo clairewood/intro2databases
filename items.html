@@ -7,7 +7,6 @@
     <head>
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
-        <title>Items</title>
         <link href="style.css" rel="stylesheet" type="text/css" />
         <script>
             function showform(dowhat) {
@@ -47,15 +46,14 @@
                 }
             }
         function newItem() { showform('insert'); }
-        function updateItem(cid) { showform('update'); }
-        function deleteItem(cid) { showform ('delete'); }
+        function updateItem(iid) { showform('update'); }
+        function deleteItem(iid) { showform ('delete'); }
         function browseItems() { showform ('browse'); }
         function showAll() { showform ('all'); }
         </script>
     </head>
     
-    <body onload="browseItems()"></body>
-    <body>
+    <body onload="browseItems()">
         <h1> Morse Coders Craft Store </h1>
         <h2> Items </h2>
         <a href="items.html">Items</a> | <a href="customers.html">Customers</a> |
@@ -63,13 +61,14 @@
         <br>
         <a href="materials.html">Materials</a> | <a href="colors.html">Colors</a> |
         <a href="suppliers.html">Suppliers</a> | <a href="employees.html">Employees</a>
-        <!-- TODO: add all tables here-->
+        <br>
+        <!-- Tables -->
         <div id="browse" style="display: block">
         <p><a href="#" onClick="showAll()">Display all forms</a> </p>
         <p><strong>Browse Items</strong></p>
             <table class="center">
                 <tr>
-                    <th><a href="#">New</a></th>
+                    <th><a href="#" onClick="newItem()">New</a></th>
                     <th></th>
                     <th>id</th>
                     <th>supplier id</th>
@@ -80,8 +79,8 @@
                     <th>price</th>
                 </tr>
                 <tr>
-                    <td><a href="#">Edit</a></td>
-                    <td><a href="#">Delete</a></td>
+                    <td><a href="#" onClick="updateItem('this.itemID')">Edit</a></td>
+                    <td><a href="#" onClick="deleteItem('this.itemID')">Delete</a></td>
                     <td>1</td>
                     <td>1</td>
                     <td>Yarn</td>
@@ -91,8 +90,8 @@
                     <td>10.99</td>
                 </tr>
                 <tr>
-                    <td><a href="#">Edit</a></td>
-                    <td><a href="#">Delete</a></td>
+                    <td><a href="#" onClick="updateItem('this.itemID')">Edit</a></td>
+                    <td><a href="#" onClick="deleteItem('this.itemID')">Delete</a></td>
                     <td>2</td>
                     <td>1</td>
                     <td>Glass</td>
@@ -105,7 +104,7 @@
         <p>&nbsp;</p>
         </div> <!-- browse -->
         <div id="insert" style="display: block">
-            <form id="addItem">
+            <form method="POST" id="addItem">
                 <legend><strong>Add Item</strong></legend>
                   <fieldset class="fields">
                     <label> Supplier ID: </label> <input type="text" name="supplier"> <!-- should be dropdown menu eventually -->
@@ -122,7 +121,7 @@
         
         <p>&nbsp;</p>
         <div id="update" style="display: block">
-          <form id="updateItem">
+          <form method="POST" id="updateItem">
               <legend><strong>Update Item</strong></legend>
                   <fieldset class="fields">
                   <label>ID:</label> 1 
@@ -139,7 +138,7 @@
         </div><!-- update -->
         <p>&nbsp;</p>
         <div id="delete" style="display: block">
-          <form id="deleteItem">
+          <form method="POST" id="deleteItem">
               <legend><strong>Delete Item</strong></legend>
                   <fieldset class="fields">
                   <p>Are you sure you wish to delete the following?</p>
