@@ -2,7 +2,9 @@
 In progress project for Intro to Databases class. <br>
 UI for a database that tracks the Items in a craft store's inventory. The database will track the Color and Material of each item, as well as the Sales, Customers, Employees, and Suppliers associated with each item. 
 
-Primary files: items.html, customers.html
+TODO: <br>
+--> Add data to rest of tables and displaying them (currently only items and customers) <br>
+--> Add one more example insert per table (bring total to 3) <br>
 
 Link to view the live website: <br> 
 https://web.engr.oregonstate.edu/~woodforc/intro2databases/items.html <br>
