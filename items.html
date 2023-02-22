@@ -71,12 +71,12 @@
                     <th><a href="#" onClick="newItem()">New</a></th>
                     <th></th>
                     <th>ID</th>
-                    <th>supplier ID</th>
-                    <th>material</th>
-                    <th>color</th>
-                    <th>in_stock</th>
-                    <th>quantity</th>
-                    <th>price</th>
+                    <th>Supplier ID</th>
+                    <th>Material</th>
+                    <th>Color</th>
+                    <th>In stock?</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
                 </tr>
                 <tr>
                     <td><a href="#" onClick="updateItem('this.itemID')">Edit</a></td>
@@ -124,12 +124,12 @@
                         <option value="0">&nbsp;</option>
                         <option value="1">FakeCompany (1)</option>
                         </select>
-                    <label> Material ID: </label> <select name="supplier id">
+                    <label> Material: </label> <select name="supplier id">
                         <option value="">&nbsp;</option>
                         <option value="glass">Glass</option>
                         <option value="yarn">Yarn</option>
                         </select>
-                    <label> Color ID: </label> <select name="supplier id">
+                    <label> Color: </label> <select name="supplier id">
                         <option value="">&nbsp;</option>
                         <option value="red">Red</option>
                         <option value="blue">Blue</option>
@@ -140,7 +140,7 @@
                         <option value="yes">YES</option>
                         <option value="no">NO</option>
                         </select>
-                        <label> Current quantity: </label> <input type="text" name="quantity">
+                        <label> Quantity: </label> <input type="text" name="quantity">
                         <label> Price: </label> <input type="text" name="price">
                   </fieldset>
                   <input class="btn" type="submit" id="addItem" value="Add">
@@ -159,12 +159,12 @@
                     <option value="0">&nbsp;</option>
                     <option value="1">FakeCompany (1)</option>
                     </select>
-                <label> Material ID: </label> <select name="supplier id">
+                <label> Material: </label> <select name="supplier id">
                     <option value="">&nbsp;</option>
                     <option value="glass">Glass</option>
                     <option value="yarn">Yarn</option>
                     </select>
-                <label> Color ID: </label> <select name="supplier id">
+                <label> Color: </label> <select name="supplier id">
                     <option value="">&nbsp;</option>
                     <option value="red">Red</option>
                     <option value="blue">Blue</option>
@@ -174,7 +174,7 @@
                     <option value="yes">YES</option>
                     <option value="no">NO</option>
                     </select>
-                    <label> Current quantity: </label> <input type="text" name="quantity">
+                    <label> Quantity: </label> <input type="text" name="quantity">
                     <label> Price: </label> <input type="text" name="price">
             </fieldset>
             <input class="btn" type="submit" id="UpdateSaveItem" value="Save Updated Item">
@@ -187,8 +187,13 @@
               <legend><strong>Delete Item</strong></legend>
                   <fieldset class="fields">
                   <p>Are you sure you wish to delete the following?</p>
-                    <label>ID:</label> 1 | <label> Material: </label> Yarn | 
-                    <label> Color: </label> Blue | <label> Supplier ID: </label> 1
+                    <label>ID:</label> 1 <br> 
+                    <label> Supplier ID: </label> 1 <br>
+                    <label> Material: </label> Yarn <br>
+                    <label> Color: </label> Blue <br>
+                    <label> In stock? </label> YES <br> 
+                    <label> Quantity: </label> 10 <br>
+                    <label> Price: </label> $10.99
             </fieldset>
             <input class="btn" type="submit" id="DeleteItem" value="Delete Item">
                   <input class="btn" type="button" value="Cancel" >
